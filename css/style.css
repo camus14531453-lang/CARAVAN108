@@ -26,14 +26,19 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--ink-2)} /* dark overscroll edges on mobile */
+html{
+  scroll-behavior:smooth;
+  background:var(--ink-2); /* dark overscroll edges on mobile */
+  overflow-x:clip;         /* clip ≠ hidden: no scroll container created, sticky survives */
+}
 body{
   background:var(--sand);
   color:var(--ink);
   font-family:var(--serif-cn);
   font-size:16px;
   line-height:1.85;
-  overflow-x:hidden;             /* body only — keeps position:sticky alive */
+  overflow-x:hidden;             /* fallback for browsers without overflow:clip */
+  overflow-x:clip;               /* iOS ignores body hidden for panning; clip stops it */
   -webkit-font-smoothing:antialiased;
   cursor:none;
 }
@@ -350,6 +355,7 @@ body.menu-open .mm-foot{opacity:1}
     radial-gradient(ellipse 60% 40% at 12% 8%,rgba(198,151,63,.12),transparent 60%),
     var(--sand);
   padding-bottom:130px;position:relative;
+  overflow-x:clip; /* its decorative ring pokes past the right edge — iOS pans into it otherwise */
 }
 .origin::before{ /* faint caisson ring backdrop */
   content:"";position:absolute;right:-160px;top:120px;width:520px;height:520px;border-radius:50%;
@@ -456,10 +462,10 @@ body.menu-open .mm-foot{opacity:1}
   border:2px solid var(--gold);
   box-shadow:0 0 90px rgba(198,151,63,.4),0 0 0 12px rgba(198,151,63,.08);
 }
-.ring-text{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.ring-text{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite;pointer-events:none} /* don't block taps on the video's native play button */
 .ring-text text{fill:var(--gold-2);font-family:var(--serif-en);font-size:12.5px;letter-spacing:.32em}
 .hares-disc{--orbit-r:min(260px,24vw)} /* dot orbit radius follows the disc size */
-.orbit-dot{position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--rust-2)}
+.orbit-dot{position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--rust-2);pointer-events:none}
 .orbit-dot.d1{animation:orbit 12s linear infinite}
 .orbit-dot.d2{animation:orbit 12s linear infinite -4s}
 .orbit-dot.d3{animation:orbit 12s linear infinite -8s}
@@ -475,7 +481,7 @@ body.menu-open .mm-foot{opacity:1}
 .hui-strip svg{width:100%;max-width:520px}
 
 /* ═══════════ 05 FRUITS ═══════════ */
-.fruits{background:var(--paper);padding-bottom:130px;position:relative}
+.fruits{background:var(--paper);padding-bottom:130px;position:relative;overflow-x:clip}
 .fruits::before{
   content:"藏";content:"";position:absolute;left:-120px;bottom:-80px;width:420px;height:420px;
   border-radius:50%;border:1px dashed rgba(76,131,120,.3);animation:spin 70s linear infinite reverse;
@@ -655,6 +661,9 @@ body.menu-open .mm-foot{opacity:1}
   .nav-logo{font-size:16px}
   .nav-right{gap:12px}
   .lang-toggle{min-width:88px;padding:8px 12px;font-size:11px}
+
+  /* — decorative off-canvas rings: old iOS pans into them even with clip — */
+  .origin::before,.fruits::before{display:none}
 
   /* — section rhythm — */
   .sec-head{padding:64px 6vw 26px}

@@ -97,6 +97,23 @@
     });
   }
 
+  /* ── HARES VIDEO: strict in-app browsers (WeChat) block autoplay;
+        kick playback on visibility, first touch, and the WeChat bridge ── */
+  const haresVideo = $("#haresVideo");
+  if (haresVideo) {
+    const kick = () => { if (haresVideo.paused) haresVideo.play().catch(() => {}); };
+    new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) kick(); }),
+      { threshold: 0.15 }).observe(haresVideo);
+    // keep retrying on every gesture until it actually plays (Low Power Mode / WeChat)
+    addEventListener("touchend", kick, { passive: true });
+    addEventListener("click", kick);
+    document.addEventListener("WeixinJSBridgeReady", kick);
+    haresVideo.addEventListener("playing", () => {
+      removeEventListener("touchend", kick);
+      removeEventListener("click", kick);
+    }, { once: true });
+  }
+
   /* ── SCROLL REVEALS ── */
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => {
