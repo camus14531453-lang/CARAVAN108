@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Caravan 108 · Dunhuang Inspired Dry Fruit Brand</title>
+<meta name="description" content="Caravan 108 — Dunhuang Inspired Dry Fruit Brand. 以敦煌壁画为灵感的丝路干果品牌。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════ LOADER ══════════ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <svg class="loader-ring" viewBox="0 0 120 120">
+      <circle class="ring-track" cx="60" cy="60" r="52"/>
+      <circle class="ring-fill" cx="60" cy="60" r="52"/>
+      <circle cx="60" cy="60" r="40" fill="none" stroke="var(--gold)" stroke-width=".5" stroke-dasharray="2 4" opacity=".6"/>
+    </svg>
+    <div class="loader-count" id="loaderCount">000</div>
+    <div class="loader-label">CARAVAN · 敦煌 · DUNHUANG</div>
+  </div>
+</div>
+
+<!-- ══════════ CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ PROGRESS ══════════ -->
+<div class="scroll-progress"><span id="progressBar"></span></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="#top" data-hover>
+    <svg viewBox="0 0 34 34" class="nav-mark"><circle cx="17" cy="17" r="15.5" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17" cy="17" r="10" fill="none" stroke="currentColor" stroke-width=".7" stroke-dasharray="2 3"/><text x="17" y="21.5" text-anchor="middle" font-size="11" fill="currentColor" font-family="Georgia,serif">C</text></svg>
+    <span>Caravan <em>108</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="#origin" data-hover><span class="zh">缘起 <i>Origin</i></span><span class="en">Origin <i>缘起</i></span></a>
+    <a href="#silkroad" data-hover><span class="zh">丝路 <i>Silk Road</i></span><span class="en">Silk Road <i>丝路</i></span></a>
+    <a href="#hares" data-hover><span class="zh">三兔 <i>Hares</i></span><span class="en">Hares <i>三兔</i></span></a>
+    <a href="#fruits" data-hover><span class="zh">干果 <i>Fruits</i></span><span class="en">Fruits <i>干果</i></span></a>
+    <a href="#patterns" data-hover><span class="zh">纹样 <i>Patterns</i></span><span class="en">Patterns <i>纹样</i></span></a>
+    <a href="#packaging" data-hover><span class="zh">包装 <i>Packaging</i></span><span class="en">Packaging <i>包装</i></span></a>
+  </div>
+  <div class="nav-right">
+    <button class="lang-toggle" id="langToggle" data-hover aria-label="Switch language / 切换语言">
+      <span class="lt-opt" data-l="en">EN</span><i>·</i><span class="lt-opt" data-l="zh">中</span>
+    </button>
+    <div class="nav-side">DUNHUANG · 40.14°N 94.66°E</div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu / 菜单" aria-expanded="false" data-hover>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════ MOBILE MENU ══════════ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mm-inner">
+    <a class="mm-link" href="#origin"><span class="mm-no">壹</span><span class="zh">缘起</span><span class="en">Origin</span></a>
+    <a class="mm-link" href="#silkroad"><span class="mm-no">贰</span><span class="zh">丝路</span><span class="en">Silk Road</span></a>
+    <a class="mm-link" href="#hares"><span class="mm-no">叁</span><span class="zh">三兔共耳</span><span class="en">Three Hares</span></a>
+    <a class="mm-link" href="#fruits"><span class="mm-no">肆</span><span class="zh">为何是干果</span><span class="en">Why Dry Fruits</span></a>
+    <a class="mm-link" href="#patterns"><span class="mm-no">伍</span><span class="zh">纹样研究</span><span class="en">Patterns</span></a>
+    <a class="mm-link" href="#packaging"><span class="mm-no">陆</span><span class="zh">包装</span><span class="en">Packaging</span></a>
+    <div class="mm-foot">CARAVAN 108 · 敦煌 DUNHUANG</div>
+  </nav>
+</div>
+
+<main id="top">
+
+<!-- ══════════ 01 HERO ══════════ -->
+<header class="hero" id="hero">
+  <div class="hero-mandala-wrap" aria-hidden="true">
+    <img src="assets/mandala.jpg" alt="" class="hero-mandala" id="heroMandala">
+    <div class="hero-mandala-glow"></div>
+  </div>
+
+  <div class="hero-frame" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-kicker reveal-line"><span><b class="zh">丝绸之路 · 一〇八驼铃 — Dunhuang Inspired Dry Fruit Brand</b><b class="en">The Silk Road · 108 Camel Bells — 敦煌灵感干果品牌</b></span></p>
+    <h1 class="hero-title" id="heroTitle" aria-label="CARAVAN 108">
+      <span class="ht-row"><i>C</i><i>A</i><i>R</i><i>A</i><i>V</i><i>A</i><i>N</i></span>
+      <span class="ht-row ht-num"><i>1</i><i>0</i><i>8</i><em class="ht-cn"><b class="zh">敦煌 · 驼铃商队</b><b class="en">DUNHUANG · THE CARAVAN</b></em></span>
+    </h1>
+    <p class="hero-sub reveal-line"><span><b class="zh">取壁画之色，承丝路之味 —— 葡萄干 · 核桃 · 开心果</b><b class="en">Colors from the murals, flavors from the road — Raisins · Walnuts · Pistachios</b></span></p>
+    <div class="hero-credits reveal-line"><span>Emmy Yao&ensp;/&ensp;Yu Mo&ensp;/&ensp;Ruoxi Zhang</span></div>
+  </div>
+
+  <div class="hero-side" aria-hidden="true"><span class="zh">莫高窟 · MOGAO GROTTOES · 公元 366 年</span><span class="en">MOGAO GROTTOES · EST. 366 AD · 莫高窟</span></div>
+
+  <a class="hero-scrollcue" href="#origin" data-hover>
+    <span class="cue-cn"><b class="zh">入窟</b><b class="en">ENTER</b></span>
+    <span class="cue-line"></span>
+    <span class="cue-en">SCROLL</span>
+  </a>
+
+  <div class="marquee hero-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>葡萄干 RAISINS ✦ 核桃 WALNUTS ✦ 开心果 PISTACHIOS ✦ 敦煌 DUNHUANG ✦ 丝绸之路 SILK ROAD ✦ 三兔共耳 THREE HARES ✦ 藻井 CAISSON ✦&nbsp;</span>
+      <span>葡萄干 RAISINS ✦ 核桃 WALNUTS ✦ 开心果 PISTACHIOS ✦ 敦煌 DUNHUANG ✦ 丝绸之路 SILK ROAD ✦ 三兔共耳 THREE HARES ✦ 藻井 CAISSON ✦&nbsp;</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ 02 ORIGIN ══════════ -->
+<section class="origin" id="origin">
+  <div class="sec-head">
+    <span class="sec-no">壹 / 01</span>
+    <h2 class="sec-title reveal-clip"><span><b class="zh">缘起 · 壁上千年</b><b class="en">Origin · A Millennium on the Walls</b></span></h2>
+    <span class="sec-en"><span class="zh">THE ORIGIN — PAINTED WALLS OF A MILLENNIUM</span><span class="en">缘起 · 壁上千年</span></span>
+  </div>
+
+  <div class="origin-grid">
+    <figure class="origin-fig reveal-mask">
+      <div class="fig-inner"><img src="assets/lotus-hands.jpg" alt="Dunhuang mural: hands holding the lotus" class="parallax-img" data-parallax="0.12"></div>
+      <figcaption><span class="zh">敦煌壁画 · 持莲之手 — Hands Holding the Lotus, Dunhuang Mural</span><span class="en">Hands Holding the Lotus — Dunhuang mural · 持莲之手</span></figcaption>
+      <div class="fig-corner tl"></div><div class="fig-corner br"></div>
+    </figure>
+
+    <div class="origin-text">
+      <div class="ornament reveal-fade" aria-hidden="true">
+        <svg viewBox="0 0 120 24"><path d="M4 12 Q 20 2 36 12 T 68 12 T 100 12 L 116 12" fill="none" stroke="var(--gold)" stroke-width="1.4"/><circle cx="60" cy="12" r="3.2" fill="var(--rust)"/><circle cx="4" cy="12" r="2" fill="var(--gold)"/><circle cx="116" cy="12" r="2" fill="var(--gold)"/></svg>
+      </div>
+      <p class="lead reveal-fade"><span class="zh">公元 366 年，乐僔和尚在鸣沙山东麓开凿了第一个洞窟。此后一千六百余年，敦煌壁画以赭红、石青、石绿与泥金，绘尽丝路的信仰与烟火。</span><span class="en">In 366 AD, the monk Le Zun cut the first cave into the cliffs by Mingsha Hill. For the next sixteen centuries, the murals of Dunhuang painted the faith and daily life of the Silk Road — in ochre, azurite, malachite and gold.</span></p>
+      <p class="reveal-fade"><span class="zh">Caravan 108 从这些壁画中取色、取形、取意：藻井的秩序、莲花的洁净、祥云的流动。<b>「108」</b>是一串驼铃，也是佛珠的数目——一次穿越沙海的完整旅程。</span><span class="en">Caravan 108 borrows its color, form and spirit from these walls: the order of the caisson ceiling, the purity of the lotus, the motion of auspicious clouds. <b>“108”</b> is a string of camel bells — and the count of prayer beads — one complete journey across the sea of sand.</span></p>
+      <p class="reveal-fade en-note"><span class="zh">We borrow the mineral palette of the murals — ochre, azurite, malachite and gold — and let dried fruits carry the taste of the Silk Road into daily life.</span><span class="en">我们从壁画中借来矿物的颜色——赭红、石青、石绿与泥金——让干果把丝路的味道带进日常。</span></p>
+
+      <ul class="origin-stats">
+        <li class="reveal-fade"><b class="stat-num" data-count="735">0</b><span><b class="zh">现存洞窟<br>Caves</b><b class="en">Caves<br>现存洞窟</b></span></li>
+        <li class="reveal-fade"><b class="stat-num" data-count="45000">0</b><span><b class="zh">㎡ 壁画<br>Murals</b><b class="en">㎡ of Murals<br>壁画</b></span></li>
+        <li class="reveal-fade"><b class="stat-num" data-count="1660">0</b><span><b class="zh">年历史<br>Years</b><b class="en">Years<br>年历史</b></span></li>
+        <li class="reveal-fade"><b class="stat-num" data-count="108">0</b><span><b class="zh">声驼铃<br>Camel Bells</b><b class="en">Camel Bells<br>驼铃</b></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 SILK ROAD PANORAMA ══════════ -->
+<section class="silkroad" id="silkroad">
+  <div class="sec-head dark">
+    <span class="sec-no">贰 / 02</span>
+    <h2 class="sec-title reveal-clip"><span><b class="zh">丝路 · 沙海行旅</b><b class="en">The Silk Road · Across the Sands</b></span></h2>
+    <span class="sec-en"><span class="zh">THE SILK ROAD — A CARAVAN THROUGH THE SANDS</span><span class="en">丝路 · 沙海行旅</span></span>
+  </div>
+
+  <div class="pano-pin" id="panoPin">
+    <div class="pano-sticky">
+      <div class="pano-track" id="panoTrack">
+        <img src="assets/silkroad-art.jpg" alt="Decorative scroll painting of a Silk Road caravan">
+      </div>
+      <div class="pano-caption"><span><span class="zh">驼队自长安出发，经敦煌，越葱岭，抵撒马尔罕 —— The caravan departs Chang'an, passes Dunhuang, crosses the Pamirs.</span><span class="en">The caravan departs Chang'an, passes Dunhuang, crosses the Pamirs to Samarkand — 驼队自长安出发，经敦煌，越葱岭。</span></span></div>
+      <div class="pano-progress"><i id="panoBar"></i></div>
+    </div>
+  </div>
+
+  <div class="map-block">
+    <div class="map-frame reveal-mask">
+      <img src="assets/map.png" alt="Map of the Silk Road with Dunhuang circled">
+      <span class="map-marker" style="left:73.2%;top:33%"><i></i><b><span class="zh">敦煌 DUNHUANG</span><span class="en">DUNHUANG 敦煌</span></b></span>
+      <span class="map-marker small" style="left:87.5%;top:35.5%"><i></i><b><span class="zh">长安</span><span class="en">Chang'an</span></b></span>
+      <span class="map-marker small" style="left:57.5%;top:27%"><i></i><b><span class="zh">喀什</span><span class="en">Kashgar</span></b></span>
+      <span class="map-marker small" style="left:47.5%;top:44.5%"><i></i><b><span class="zh">撒马尔罕</span><span class="en">Samarkand</span></b></span>
+    </div>
+    <div class="map-legend">
+      <div class="route-item reveal-fade"><span class="route-line overland"></span><span class="zh">陆上丝绸之路 Silk Road (Overland)</span><span class="en">Silk Road, Overland · 陆上丝路</span></div>
+      <div class="route-item reveal-fade"><span class="route-line maritime"></span><span class="zh">海上丝绸之路 Silk Road (Maritime)</span><span class="en">Silk Road, Maritime · 海上丝路</span></div>
+      <p class="reveal-fade"><span class="zh">敦煌是陆路的咽喉：西域的葡萄、波斯的开心果、中亚的核桃，都在这里换驼、称重、装箱，再各奔东西。</span><span class="en">Dunhuang was the throat of the overland road: grapes from the Western Regions, pistachios from Persia, walnuts from Central Asia — all changed camels here, were weighed and crated, then went their separate ways.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 THREE HARES ══════════ -->
+<section class="hares" id="hares">
+  <div class="hares-stage">
+    <div class="hares-disc reveal-scale">
+      <img src="assets/hares.gif" alt="Mogao caisson ceiling: three hares sharing three ears, animated" loading="lazy">
+      <svg class="ring-text" viewBox="0 0 300 300" aria-hidden="true">
+        <defs><path id="circlePath" d="M150,150 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0"/></defs>
+        <text><textPath href="#circlePath">三兔共耳 · THREE HARES · MOGAO CAVE 407 · 生生不息 · ETERNAL CYCLE · 三兔共耳 · THREE HARES ·</textPath></text>
+      </svg>
+      <span class="orbit-dot d1"></span><span class="orbit-dot d2"></span><span class="orbit-dot d3"></span>
+    </div>
+
+    <div class="hares-text">
+      <div class="sec-head dark left">
+        <span class="sec-no">叁 / 03</span>
+        <h2 class="sec-title reveal-clip"><span><b class="zh">三兔共耳 · 生生不息</b><b class="en">Three Hares, Three Shared Ears</b></span></h2>
+        <span class="sec-en"><span class="zh">THREE HARES SHARING THREE EARS</span><span class="en">三兔共耳 · 生生不息</span></span>
+      </div>
+      <p class="lead reveal-fade"><span class="zh">三只奔兔共享三只耳朵，首尾相接，循环无端 —— 这个纹样最早见于莫高窟第 407 窟藻井。</span><span class="en">Three running hares share three ears, nose to tail, a cycle without end — first painted on the caisson ceiling of Mogao Cave 407.</span></p>
+      <p class="reveal-fade"><span class="zh">它沿丝路一路西行，出现在波斯的铜盘、中亚的织物、欧洲的教堂之上。我们以它为品牌图腾：<b>欧洲、中亚与波斯的干果文化，与中国在丝路上交织成一个闭环。</b></span><span class="en">The motif travelled west along the road, surfacing on Persian trays, Central Asian textiles and European church ceilings. We take it as our emblem: <b>the dried-fruit cultures of Europe, Central Asia and Persia, interwoven with China in one closed loop.</b></span></p>
+      <p class="reveal-fade"><span class="zh">外盒环饰取自汉字<b>「回」</b>的回纹 —— 回环、回味、回归，如丝路上千年不息的往返。</span><span class="en">The band on our outer box comes from the Chinese character <b>回</b> — return, recur, come home — like the road's thousand-year round trip.</span></p>
+      <div class="hui-strip reveal-fade" aria-hidden="true">
+        <svg viewBox="0 0 560 40" preserveAspectRatio="xMidYMid meet">
+          <defs><g id="huiUnit"><path d="M2 34 L2 6 L34 6 L34 26 L14 26 L14 14 L26 14" fill="none" stroke="currentColor" stroke-width="3"/></g></defs>
+          <use href="#huiUnit" x="0"/><use href="#huiUnit" x="46"/><use href="#huiUnit" x="92"/><use href="#huiUnit" x="138"/><use href="#huiUnit" x="184"/><use href="#huiUnit" x="230"/><use href="#huiUnit" x="276"/><use href="#huiUnit" x="322"/><use href="#huiUnit" x="368"/><use href="#huiUnit" x="414"/><use href="#huiUnit" x="460"/><use href="#huiUnit" x="506"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 05 WHY DRY FRUITS ══════════ -->
+<section class="fruits" id="fruits">
+  <div class="sec-head">
+    <span class="sec-no">肆 / 04</span>
+    <h2 class="sec-title reveal-clip"><span><b class="zh">为何是干果？</b><b class="en">Why Dry Fruits?</b></span></h2>
+    <span class="sec-en"><span class="zh">WHY DRY FRUITS — PORTABLE, DURABLE, HIGH IN ENERGY</span><span class="en">为何是干果 — 轻便 · 耐存 · 高能量</span></span>
+  </div>
+  <p class="fruits-intro reveal-fade"><span class="zh">轻便、耐存、高能量 —— 干果是丝路上最重要的随行货物。每一种，都是一条文明的来路。</span><span class="en">Portable, durable, high in energy — dried fruits were the Silk Road's most important travelling goods. Each one is a road by which a civilisation arrived.</span></p>
+
+  <div class="fruit-cards">
+    <article class="fruit-card reveal-up" data-tilt>
+      <span class="fc-no">壹</span>
+      <div class="fc-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M32 10 C 30 16 26 18 22 18"/><ellipse cx="24" cy="28" rx="6" ry="7.5"/><ellipse cx="40" cy="28" rx="6" ry="7.5"/><ellipse cx="18" cy="41" rx="6" ry="7.5"/><ellipse cx="32" cy="42" rx="6" ry="7.5"/><ellipse cx="46" cy="41" rx="6" ry="7.5"/><ellipse cx="25" cy="53" rx="6" ry="7.5"/><ellipse cx="39" cy="53" rx="6" ry="7.5"/></g></svg>
+      </div>
+      <h3><span class="zh">葡萄干 <i>Raisins</i></span><span class="en">Raisins <i>葡萄干</i></span></h3>
+      <b class="fc-tag"><span class="zh">农耕 · AGRICULTURE</span><span class="en">AGRICULTURE · 农耕</span></b>
+      <p><span class="zh">自西域与中亚传入敦煌，带来了葡萄种植、灌溉技术与定居文明。</span><span class="en">Carried into Dunhuang from the West and Central Asia — bringing grape farming, irrigation and settled life.</span></p>
+      <span class="fc-route">West &amp; Central Asia → Dunhuang</span>
+    </article>
+
+    <article class="fruit-card reveal-up" data-tilt>
+      <span class="fc-no">贰</span>
+      <div class="fc-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="32" cy="34" rx="17" ry="20"/><path d="M32 16 C 28 24 28 44 32 52 M32 16 C 36 24 36 44 32 52"/><path d="M20 26 Q 26 30 24 38 M44 26 Q 38 30 40 38"/></g></svg>
+      </div>
+      <h3><span class="zh">核桃 <i>Walnuts</i></span><span class="en">Walnuts <i>核桃</i></span></h3>
+      <b class="fc-tag"><span class="zh">迁徙 · MIGRATION</span><span class="en">MIGRATION · 迁徙</span></b>
+      <p><span class="zh">由中亚东传入华，古称「胡桃」—— 一枚果核里的文化交流史。</span><span class="en">Travelled east from Central Asia; the old name “hu tao” — foreign peach — holds a whole history of exchange.</span></p>
+      <span class="fc-route">Central Asia → China ·「胡桃」</span>
+    </article>
+
+    <article class="fruit-card reveal-up" data-tilt>
+      <span class="fc-no">叁</span>
+      <div class="fc-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M32 12 C 46 20 48 38 38 50 C 35 53 29 53 26 50 C 16 38 18 20 32 12 Z"/><path d="M32 12 C 34 26 34 40 31 51"/><path d="M40 22 Q 35 28 33 36"/></g></svg>
+      </div>
+      <h3><span class="zh">开心果 <i>Pistachios</i></span><span class="en">Pistachios <i>开心果</i></span></h3>
+      <b class="fc-tag"><span class="zh">贸易 · TRADE</span><span class="en">TRADE · 贸易</span></b>
+      <p><span class="zh">来自波斯，价高而易携，是长距离贸易网络中的硬通货。</span><span class="en">From Persia: high in value, easy to carry — hard currency of the long-distance trade networks.</span></p>
+      <span class="fc-route">Persia → Silk Road Network</span>
+    </article>
+
+    <article class="fruit-card accent reveal-up" data-tilt>
+      <span class="fc-no">肆</span>
+      <div class="fc-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 46 Q 20 30 30 32 Q 34 22 44 24 Q 52 26 50 36 Q 56 40 52 46 Z"/><path d="M22 46 L 22 52 M44 46 L 44 52"/><circle cx="41" cy="30" r="1.6" fill="currentColor"/></g></svg>
+      </div>
+      <h3><span class="zh">汇于敦煌 <i>Together</i></span><span class="en">Together <i>汇于敦煌</i></span></h3>
+      <b class="fc-tag"><span class="zh">交汇 · CONFLUENCE</span><span class="en">CONFLUENCE · 交汇</span></b>
+      <p><span class="zh">农耕 → 迁徙 → 贸易 —— 三条线索在敦煌交汇，装进同一只礼盒。</span><span class="en">Agriculture → migration → trade — three threads meet at Dunhuang, packed into a single gift box.</span></p>
+      <span class="fc-route">Agriculture → Migration → Trade</span>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════ 06 PATTERNS ══════════ -->
+<section class="patterns" id="patterns">
+  <div class="sec-head">
+    <span class="sec-no">伍 / 05</span>
+    <h2 class="sec-title reveal-clip"><span><b class="zh">纹样研究</b><b class="en">Pattern Research</b></span></h2>
+    <span class="sec-en"><span class="zh">PATTERN RESEARCH — FROM MURAL TO PACKAGE</span><span class="en">纹样研究 — 从壁画到包装</span></span>
+  </div>
+
+  <div class="pattern-row">
+    <div class="pattern-text">
+      <h3 class="reveal-fade"><span class="zh">祥云纹 <i>Cloud Pattern</i></span><span class="en">Cloud Pattern <i>祥云纹</i></span> <em><span class="zh">内包装</span><span class="en">INNER</span></em></h3>
+      <p class="reveal-fade"><span class="zh">敦煌壁画中，祥云环绕佛陀与飞天，象征神圣与庇佑。旋转流动的云线暗合敦煌在丝路上的角色 —— 行旅、交换与探索。</span><span class="en">In the murals, auspicious clouds surround Buddhas and flying apsaras — sacred power and protection. Their rotating, flowing lines echo Dunhuang's role on the road: travel, exchange, exploration.</span></p>
+      <p class="reveal-fade en-note"><span class="zh">Rhythmic curves lend the cloud strong decorative power; simplified lines turn it into a contemporary oriental symbol.</span><span class="en">有节奏的曲线让云纹极具装饰性；简化的线条使它成为当代的东方符号。</span></p>
+    </div>
+    <div class="pattern-swatches">
+      <figure class="swatch reveal-up" data-tilt><img src="assets/cloud1.png" alt="Cloud pattern I"><figcaption><span class="zh">云纹 · 壹</span><span class="en">CLOUD · Ⅰ</span></figcaption></figure>
+      <figure class="swatch reveal-up" data-tilt><img src="assets/cloud2.png" alt="Cloud pattern II"><figcaption><span class="zh">云纹 · 贰</span><span class="en">CLOUD · Ⅱ</span></figcaption></figure>
+      <figure class="swatch reveal-up" data-tilt><img src="assets/cloud3.png" alt="Cloud pattern III"><figcaption><span class="zh">云纹 · 叁</span><span class="en">CLOUD · Ⅲ</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="pattern-row flip">
+    <div class="pattern-text">
+      <h3 class="reveal-fade"><span class="zh">莲花纹 <i>Lotus Pattern</i></span><span class="en">Lotus Pattern <i>莲花纹</i></span> <em><span class="zh">内包装</span><span class="en">INNER</span></em></h3>
+      <p class="reveal-fade"><span class="zh">莲花在敦煌佛教艺术中象征洁净与觉醒。用于干果包装，它延伸为自然生长、原料本真与健康生活 —— 层层展开的花瓣，亦是丰收与分享。</span><span class="en">In Dunhuang's Buddhist art the lotus stands for purity and awakening. On a dried-fruit package it extends to natural growth, honest ingredients and a healthy life — petals unfolding like harvest and sharing.</span></p>
+      <p class="reveal-fade en-note"><span class="zh">The unfolding petals speak of harvest, sharing and good wishes — dried fruits as healthy snacks and gifts.</span><span class="en">层层展开的花瓣，隐喻丰收、分享与美意 —— 干果既是健康零食，也是礼物。</span></p>
+    </div>
+    <div class="pattern-swatches two">
+      <figure class="swatch wide reveal-up" data-tilt><img src="assets/lotus-sheet1.png" alt="Lotus pattern studies, sheet one"><figcaption><span class="zh">莲纹 · 手绘稿</span><span class="en">LOTUS · STUDIES</span></figcaption></figure>
+      <figure class="swatch wide reveal-up" data-tilt><img src="assets/lotus-sheet2.png" alt="Lotus pattern studies, sheet two"><figcaption><span class="zh">莲纹 · 团花三式</span><span class="en">LOTUS · MEDALLIONS</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="pattern-row">
+    <div class="pattern-text">
+      <h3 class="reveal-fade"><span class="zh">葡萄纹 &amp; 回纹 <i>Grape &amp; Hui</i></span><span class="en">Grape &amp; Hui Meander <i>葡萄纹 · 回纹</i></span> <em><span class="zh">外包装</span><span class="en">OUTER</span></em></h3>
+      <p class="reveal-fade"><span class="zh">壁画中的葡萄纹呼应干果品类，四角葡萄暗示盒中之物；「回」字回纹与三兔共耳同义 —— 循环往复、周而复始的丝路时间。</span><span class="en">Grape scrolls in the murals echo what the box holds — grapes in the four corners hint at the contents. The 回 meander means return and recurrence: Silk Road time, going round and coming back.</span></p>
+      <p class="reveal-fade en-note"><span class="zh">Grapes hint at the contents; the Hui meander frames the box like the Silk Road's eternal round trip.</span><span class="en">四角的葡萄暗示盒中之物；回纹环盒一周，如丝路千年不息的往返。</span></p>
+    </div>
+    <div class="pattern-motifs">
+      <div class="motif-card reveal-up" data-tilt>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><circle cx="50" cy="26" r="7"/><circle cx="38" cy="38" r="7"/><circle cx="62" cy="38" r="7"/><circle cx="30" cy="52" r="7"/><circle cx="50" cy="52" r="7"/><circle cx="70" cy="52" r="7"/><circle cx="40" cy="66" r="7"/><circle cx="60" cy="66" r="7"/><circle cx="50" cy="80" r="7"/><path d="M50 20 C 46 12 38 10 32 12 C 40 12 45 15 48 21 Z"/></g></svg>
+        <b><span class="zh">葡萄纹 GRAPE</span><span class="en">GRAPE 葡萄纹</span></b>
+      </div>
+      <div class="motif-card reveal-up" data-tilt>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M18 82 L18 18 L82 18 L82 66 L34 66 L34 34 L66 34 L66 50 L50 50" fill="none" stroke="currentColor" stroke-width="6"/></svg>
+        <b><span class="zh">回纹 HUI</span><span class="en">HUI MEANDER 回纹</span></b>
+      </div>
+      <div class="motif-card reveal-up" data-tilt>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><circle cx="50" cy="50" r="34" stroke-dasharray="6 8"/><ellipse cx="50" cy="36" rx="9" ry="13" transform="rotate(0 50 50)"/><ellipse cx="50" cy="36" rx="9" ry="13" transform="rotate(120 50 50)"/><ellipse cx="50" cy="36" rx="9" ry="13" transform="rotate(240 50 50)"/></g></svg>
+        <b><span class="zh">三兔藻井 HARES</span><span class="en">HARES CAISSON 三兔</span></b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 07 PACKAGING ══════════ -->
+<section class="packaging" id="packaging">
+  <div class="pack-pin" id="packPin">
+    <div class="pack-sticky">
+      <div class="sec-head dark center">
+        <span class="sec-no">陆 / 06</span>
+        <h2 class="sec-title reveal-clip"><span><b class="zh">包装 · 鎏金启盒</b><b class="en">Packaging · Gold, Unboxed</b></span></h2>
+        <span class="sec-en"><span class="zh">PACKAGING — GOLD, AZURITE &amp; THE OPENING RITUAL</span><span class="en">包装 — 鎏金 · 石青 · 启盒之礼</span></span>
+      </div>
+      <div class="pack-rail" id="packRail">
+        <figure class="pack-panel" data-tilt>
+          <div class="pp-img"><img src="assets/boxes.jpg" alt="Three inner boxes with lotus medallions"></div>
+          <figcaption><b><span class="zh">内盒三式 · 团窠莲花</span><span class="en">Three Inner Boxes · Lotus Medallions</span></b><span><span class="zh">石青、赭红、玄墨三色团花，印于金黄卡纸</span><span class="en">Lotus medallions in azure, rust &amp; ink on golden kraft</span></span></figcaption>
+          <i class="pp-idx">Ⅰ</i>
+        </figure>
+        <figure class="pack-panel" data-tilt>
+          <div class="pp-img"><img src="assets/goldbox-closed.png" alt="Mirror-gold outer case with navy Three Hares emblem"></div>
+          <figcaption><b><span class="zh">鎏金外盒 · 三兔为印</span><span class="en">The Outer Case · Sealed with Three Hares</span></b><span><span class="zh">镜面鎏金，藏青三兔纹章，四角缀葡萄</span><span class="en">Mirror gold foil, navy Three-Hares emblem &amp; grape corners</span></span></figcaption>
+          <i class="pp-idx">Ⅱ</i>
+        </figure>
+        <figure class="pack-panel" data-tilt>
+          <div class="pp-img"><img src="assets/goldbox-open.png" alt="Opened box showing Hui meander band and cloud-brocade lining"></div>
+          <figcaption><b><span class="zh">启盒之礼 · 回纹环城</span><span class="en">The Opening Ritual · Ringed by the Hui Meander</span></b><span><span class="zh">回纹环饰一周，内衬祥云织锦</span><span class="en">Hui meander band around the walls, cloud-brocade lining inside</span></span></figcaption>
+          <i class="pp-idx">Ⅲ</i>
+        </figure>
+      </div>
+      <div class="pack-progress"><i id="packBar"></i><span id="packStep">Ⅰ / Ⅲ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="marquee footer-marquee" aria-hidden="true">
+    <div class="marquee-track slow">
+      <span>CARAVAN 108 ✦ 敦煌灵感干果品牌 ✦ DUNHUANG INSPIRED DRY FRUIT BRAND ✦&nbsp;</span>
+      <span>CARAVAN 108 ✦ 敦煌灵感干果品牌 ✦ DUNHUANG INSPIRED DRY FRUIT BRAND ✦&nbsp;</span>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <b>Caravan 108</b>
+      <p><span class="zh">一〇八声驼铃，自敦煌启程。<br>Dry fruits that remember the Silk Road.</span><span class="en">One hundred and eight camel bells, setting out from Dunhuang.<br>干果，记得丝绸之路。</span></p>
+    </div>
+    <div class="f-col">
+      <b><span class="zh">团队 TEAM</span><span class="en">TEAM 团队</span></b>
+      <span>Emmy Yao</span><span>Yu Mo</span><span>Ruoxi Zhang</span>
+    </div>
+    <div class="f-col">
+      <b><span class="zh">品类 GOODS</span><span class="en">GOODS 品类</span></b>
+      <span><span class="zh">葡萄干 Raisins</span><span class="en">Raisins 葡萄干</span></span>
+      <span><span class="zh">核桃 Walnuts</span><span class="en">Walnuts 核桃</span></span>
+      <span><span class="zh">开心果 Pistachios</span><span class="en">Pistachios 开心果</span></span>
+    </div>
+    <div class="f-col">
+      <b><span class="zh">灵感 SOURCE</span><span class="en">SOURCE 灵感</span></b>
+      <span><span class="zh">莫高窟 Mogao Caves</span><span class="en">Mogao Caves 莫高窟</span></span>
+      <span><span class="zh">藻井 Cave 407</span><span class="en">Caisson, Cave 407</span></span>
+      <span><span class="zh">丝绸之路 Silk Road</span><span class="en">The Silk Road 丝路</span></span>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 Caravan 108 — Brand Concept</span>
+    <a href="#top" class="back-top" data-hover><span class="zh">回到窟顶 ↑ BACK TO TOP</span><span class="en">BACK TO TOP ↑ 回到窟顶</span></a>
+  </div>
+</footer>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
