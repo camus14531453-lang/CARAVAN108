@@ -77,6 +77,7 @@
   }
   burger.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
   $$(".mm-link", mobileMenu).forEach(a => a.addEventListener("click", () => setMenu(false)));
+  mobileMenu.addEventListener("click", e => { if (e.target === mobileMenu) setMenu(false); });
   addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
 
   /* ── CUSTOM CURSOR (fine pointers only) ── */

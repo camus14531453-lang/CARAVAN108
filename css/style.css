@@ -397,6 +397,21 @@ body.menu-open .mm-foot{opacity:1}
 .pano-caption span{font-size:13.5px;letter-spacing:.12em;color:rgba(245,237,218,.8)}
 .pano-progress{position:absolute;bottom:44px;left:8vw;right:8vw;height:1px;background:rgba(198,151,63,.25)}
 .pano-progress i{display:block;height:100%;width:0;background:var(--gold-2);box-shadow:0 0 8px var(--gold-2)}
+.pano-hint{ /* mobile swipe affordance; hidden on desktop */
+  display:none;align-items:center;gap:10px;justify-content:center;
+  margin-top:16px;
+  font-size:11px;letter-spacing:.28em;color:var(--gold-2);
+  animation:hintNudge 2.4s var(--ease-soft) infinite;
+}
+@keyframes hintNudge{0%,100%{transform:translateX(0);opacity:.65}50%{transform:translateX(8px);opacity:1}}
+
+/* touch feedback where hover can't fire */
+@media (hover:none){
+  .fruit-card:active,.swatch:active,.motif-card:active,.pack-panel:active{
+    transform:scale(.975);border-color:var(--gold-2);transition-duration:.15s;
+  }
+  .origin-stats li:active{transform:translateY(-3px);border-color:var(--rust)}
+}
 
 .map-block{display:grid;grid-template-columns:1.5fr 1fr;gap:4vw;padding:60px 8vw 140px;align-items:center}
 @media (max-width:900px){.map-block{grid-template-columns:1fr}}
@@ -443,13 +458,14 @@ body.menu-open .mm-foot{opacity:1}
 }
 .ring-text{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
 .ring-text text{fill:var(--gold-2);font-family:var(--serif-en);font-size:12.5px;letter-spacing:.32em}
+.hares-disc{--orbit-r:min(260px,24vw)} /* dot orbit radius follows the disc size */
 .orbit-dot{position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--rust-2)}
 .orbit-dot.d1{animation:orbit 12s linear infinite}
 .orbit-dot.d2{animation:orbit 12s linear infinite -4s}
 .orbit-dot.d3{animation:orbit 12s linear infinite -8s}
 @keyframes orbit{
-  from{transform:rotate(0) translateX(calc(min(260px,24vw))) rotate(0)}
-  to{transform:rotate(360deg) translateX(calc(min(260px,24vw))) rotate(-360deg)}
+  from{transform:rotate(0) translateX(var(--orbit-r)) rotate(0)}
+  to{transform:rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg)}
 }
 .hares-text .sec-title{color:var(--paper)}
 .hares-text .lead{font-family:var(--kai);font-size:clamp(17px,1.8vw,21px);line-height:2;margin-bottom:18px}
@@ -664,11 +680,12 @@ body.menu-open .mm-foot{opacity:1}
   .pano-track img{height:52vh;max-height:420px}
   .pano-caption{margin:18px 6vw 0}
   .pano-progress{display:none}
+  .pano-hint{display:flex}
   .map-block{padding:36px 6vw 80px;gap:30px}
 
   .hares{padding:80px 0}
   .hares-stage{padding:0 6vw;gap:40px}
-  .hares-disc{max-width:min(76vw,360px)}
+  .hares-disc{max-width:min(76vw,360px);--orbit-r:calc(min(76vw,360px)/2)} /* keep dots on the rim */
   .ring-text text{font-size:14px;letter-spacing:.24em}
 
   .fruits{padding-bottom:80px}
