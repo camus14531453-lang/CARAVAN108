@@ -451,7 +451,7 @@ body.menu-open .mm-foot{opacity:1}
 .hares-stage{display:grid;grid-template-columns:1fr 1.05fr;gap:5vw;align-items:center;padding:0 8vw}
 @media (max-width:900px){.hares-stage{grid-template-columns:1fr}}
 .hares-disc{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
-.hares-disc img{
+.hares-disc img,.hares-disc video{
   position:absolute;inset:9.5%;width:81%;height:81%;object-fit:cover;border-radius:50%;
   border:2px solid var(--gold);
   box-shadow:0 0 90px rgba(198,151,63,.4),0 0 0 12px rgba(198,151,63,.08);
