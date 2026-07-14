@@ -27,27 +27,52 @@
 
   (function runLoader() {
     const t0 = performance.now();
-    const DURATION = reduceMotion ? 50 : 1900;
-    function tick(now) {
-      const p = clamp01((now - t0) / DURATION);
-      const eased = 1 - Math.pow(1 - p, 3);
-      const n = Math.round(eased * 108);
-      loaderCount.textContent = String(n).padStart(3, "0");
-      ringFill.style.strokeDashoffset = RING_LEN * (1 - eased);
-      if (p < 1) { requestAnimationFrame(tick); }
-      else {
-        loadDone = true;
-        loader.classList.add("done");
-        document.body.classList.add("loaded");
-        $("#hero").classList.add("in");
-        // stagger hero letters
-        $$(".ht-row i").forEach((el, i) => { el.style.transitionDelay = (0.08 * i) + "s"; });
-        $$("#hero .reveal-line").forEach((el, i) => {
-          setTimeout(() => el.classList.add("in"), 500 + i * 180);
-        });
-      }
+    const MIN_TIME = reduceMotion ? 0 : 1600;  // keep the ritual even on cache hits
+    const MAX_WAIT = 20000;                    // never trap the user on a dead network
+
+    // preload every real asset; the counter follows actual progress
+    const urls = Array.from(new Set(
+      $$("img").map(im => im.currentSrc || im.src)
+        .concat($$("video").map(v => v.poster))
+        .filter(Boolean)
+    ));
+    const total = urls.length || 1;
+    let loaded = 0;
+    urls.forEach(u => {
+      const im = new Image();
+      const done = () => { loaded++; };
+      im.onload = done;
+      im.onerror = done; // a failed asset shouldn't hold the door shut
+      im.src = u;
+    });
+
+    function finish() {
+      loadDone = true;
+      loader.classList.add("done");
+      document.body.classList.add("loaded");
+      $("#hero").classList.add("in");
+      $$(".ht-row i").forEach((el, i) => { el.style.transitionDelay = (0.08 * i) + "s"; });
+      $$("#hero .reveal-line").forEach((el, i) => {
+        setTimeout(() => el.classList.add("in"), 500 + i * 180);
+      });
     }
-    requestAnimationFrame(tick);
+    // interval-driven (not rAF): keeps counting even if the tab is
+    // backgrounded mid-load, so returning users never find it frozen
+    const iv = setInterval(() => {
+      const elapsed = performance.now() - t0;
+      const real = loaded / total;
+      // pace floor: even instant cache hits sweep the ring over MIN_TIME
+      const pace = MIN_TIME ? clamp01(elapsed / MIN_TIME) : 1;
+      const frac = elapsed > MAX_WAIT ? 1 : Math.min(real, pace);
+      const n = Math.min(108, Math.round(frac * 108));
+      loaderCount.textContent = String(n).padStart(3, "0");
+      ringFill.style.strokeDashoffset = RING_LEN * (1 - n / 108);
+      const assetsReady = loaded >= total || elapsed > MAX_WAIT;
+      if (assetsReady && elapsed >= MIN_TIME && n >= 108) {
+        clearInterval(iv);
+        finish();
+      }
+    }, 50);
   })();
 
   /* ── LANGUAGE SYSTEM: English-first, persisted toggle ── */
