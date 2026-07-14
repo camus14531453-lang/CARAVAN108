@@ -139,6 +139,20 @@
     }, { once: true });
   }
 
+  /* ── IMAGE RESILIENCE: flaky mobile networks drop a file now and then;
+        retry twice with a cache-buster instead of showing a broken icon ── */
+  $$("img").forEach(im => {
+    let tries = 0;
+    im.addEventListener("error", () => {
+      if (tries >= 2 || !im.src) return;
+      tries++;
+      setTimeout(() => {
+        const base = im.src.replace(/[?&]retry=\d+$/, "");
+        im.src = base + (base.includes("?") ? "&" : "?") + "retry=" + tries;
+      }, 900 * tries);
+    });
+  });
+
   /* ── SCROLL REVEALS ── */
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => {
