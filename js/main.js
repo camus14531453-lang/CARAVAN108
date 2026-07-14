@@ -139,6 +139,20 @@
     }, { once: true });
   }
 
+  /* ── TOUCH HOVER: tap lights a card up, tapping it again (or anywhere
+        else) puts it back — replaces iOS's sticky fake-hover ── */
+  if (matchMedia("(hover:none)").matches) {
+    const SEL = ".fruit-card,.swatch,.motif-card,.pack-panel,.origin-stats li";
+    const cards = $$(SEL);
+    const clear = () => cards.forEach(el => el.classList.remove("is-hover"));
+    document.addEventListener("click", e => {
+      const card = e.target.closest(SEL);
+      const wasOn = card && card.classList.contains("is-hover");
+      clear();
+      if (card && !wasOn) card.classList.add("is-hover");
+    });
+  }
+
   /* ── IMAGE RESILIENCE: flaky mobile networks drop a file now and then;
         retry twice with a cache-buster instead of showing a broken icon ── */
   $$("img").forEach(im => {

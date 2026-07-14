@@ -421,6 +421,19 @@ body.menu-open .mm-foot{opacity:1}
   .origin-stats li:active{transform:translateY(-3px);border-color:var(--rust)}
 }
 
+/* touch "hover": JS toggles .is-hover on tap — tap again (or elsewhere) reverts.
+   Mirrors the desktop :hover looks exactly. */
+.origin-stats li.is-hover{transform:translateY(-6px);border-color:var(--rust);box-shadow:0 16px 30px -18px rgba(181,72,42,.55)}
+.fruit-card.is-hover{border-color:var(--rust);box-shadow:0 26px 50px -24px rgba(42,31,20,.5)}
+.fruit-card.is-hover::before{border-color:rgba(181,72,42,.4)}
+.fruit-card.is-hover .fc-icon svg{transform:rotate(-8deg) scale(1.12)}
+.swatch.is-hover{border-color:var(--teal);box-shadow:0 22px 44px -22px rgba(42,31,20,.5)}
+.swatch.is-hover img{transform:scale(1.06)}
+.motif-card.is-hover{background:var(--navy);transform:translateY(-6px);box-shadow:0 24px 44px -20px rgba(28,20,12,.7)}
+.motif-card.is-hover svg{transform:rotate(90deg)}
+.pack-panel.is-hover{border-color:var(--gold-2);box-shadow:0 40px 90px -40px rgba(198,151,63,.5)}
+.pack-panel.is-hover .pp-img img{transform:scale(1.05)}
+
 .map-block{display:grid;grid-template-columns:1.5fr 1fr;gap:4vw;padding:60px 8vw 140px;align-items:center}
 @media (max-width:900px){.map-block{grid-template-columns:1fr}}
 .map-frame{position:relative;border:1px solid rgba(198,151,63,.45);box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
