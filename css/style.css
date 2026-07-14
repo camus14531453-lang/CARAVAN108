@@ -437,10 +437,13 @@ body.menu-open .mm-foot{opacity:1}
 .map-block{display:grid;grid-template-columns:1.5fr 1fr;gap:4vw;padding:60px 8vw 140px;align-items:center}
 @media (max-width:900px){.map-block{grid-template-columns:1fr}}
 .map-frame{position:relative;border:1px solid rgba(198,151,63,.45);box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
-.map-marker{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:4px}
+/* zero-size anchor: the dot sits EXACTLY on the left/top coordinate,
+   the label hangs below it — no center-of-group drift at any map size */
+.map-marker{position:absolute;width:0;height:0}
 .map-marker i{
+  position:absolute;left:0;top:0;transform:translate(-50%,-50%);
   width:14px;height:14px;border-radius:50%;background:var(--rust);
-  box-shadow:0 0 0 3px rgba(181,72,42,.3);position:relative;
+  box-shadow:0 0 0 3px rgba(181,72,42,.3);
 }
 .map-marker i::after{
   content:"";position:absolute;inset:-9px;border-radius:50%;
@@ -448,6 +451,7 @@ body.menu-open .mm-foot{opacity:1}
 }
 @keyframes pulse{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.7);opacity:0}}
 .map-marker b{
+  position:absolute;left:0;top:12px;transform:translateX(-50%);
   font-size:11px;letter-spacing:.2em;background:var(--ink-2);color:var(--gold-2);
   padding:3px 9px;border:1px solid rgba(198,151,63,.5);white-space:nowrap;
 }
